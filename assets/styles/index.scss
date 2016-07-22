@@ -1,2 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.game-board {
+  height: 500px;
+  width: 50%;
+}
+
+.spot {
+  border: 1px solid black;
+  height: 166.66px;
+  width: 33%;
+  float:left;
+}
