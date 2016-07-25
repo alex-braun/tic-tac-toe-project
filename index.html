@@ -14,9 +14,19 @@
             <input type="text" class="form-control" name="credentials[email]" placeholder="e-mail">
             <input type="password" class="form-control" name="credentials[password]" placeholder="password">
           </div>
-        <button type="submit" class="btn btn-default" name="submit">Sign In</button>
+          <button type="submit" class="btn btn-default" name="submit">Sign In</button>
         </form>
+        <form class="navbar-form navbar-left" id="sign-out">
+          <div class="form-group">
+            <button type="submit" class="btn btn-default" name="submit">Sign Out</button>
+          </div>
+      </form>
+
       </nav>
+
+
+
+
       <h1>Example</h1>
     <h1>API Token Auth</h1>
           <form id="sign-up">
@@ -47,12 +57,12 @@
             </fieldset>
           </form>
 
-          <form id="sign-out">
+<!--          <form id="sign-out">
             <fieldset>
-              <legend>Change Password</legend>
+              <legend>Sign Out</legend>
               <input type="submit" name="submit" value="Sign Out">
             </fieldset>
-          </form>
+          </form> -->
           <p>Accessing an authenticated API.</p>
 
       <div class="board">
