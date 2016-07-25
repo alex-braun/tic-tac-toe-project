@@ -8,17 +8,64 @@
     </head>
     <body class="container-fluid">
       <h1>Example</h1>
+    <h1>API Token Auth</h1>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign up!</legend>
+              <input type="text" name="credentials[email]" placeholder="e-mail">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="password">
+              <input type="submit" name="submit" value="Sign up!">
+            </fieldset>
+          </form>
 
-      <div class="game-board">
-        <div class='spot zero'><h1>0</h1></div>
-        <div class='spot one'><h1>1</h1></div>
-        <div class='spot two'><h1>2</h1></div>
-        <div class='spot three'><h1>3</h1></div>
-        <div class='spot four'><h1>4</h1></div>
-        <div class='spot five'><h1>5</h1></div>
-        <div class='spot six'><h1>6</h1></div>
-        <div class='spot seven'><h1>7</h1></div>
-        <div class='spot eight'><h1>8</h1></div>
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign in!</legend>
+              <input type="text" name="credentials[email]" placeholder="e-mail">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="submit" name="submit" value="Sign in!">
+            </fieldset>
+          </form>
+
+          <form id="change-password">
+            <fieldset>
+              <legend>Change Password</legend>
+              <input type="password" name="passwords[old]" placeholder="old password">
+              <input type="password" name="passwords[new]" placeholder="new password">
+              <input type="submit" name="submit" value="Change Password">
+            </fieldset>
+          </form>
+
+          <form id="sign-out">
+            <fieldset>
+              <legend>Change Password</legend>
+              <input type="submit" name="submit" value="Sign Out">
+            </fieldset>
+          </form>
+          <p>Accessing an authenticated API.</p>
+
+      <div class="board">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4 one"></div>
+            <div class="col-xs-4 two"></div>
+            <div class="col-xs-4 three"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 four"></div>
+            <div class="col-xs-4 five"></div>
+            <div class="col-xs-4 six"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 seven"></div>
+            <div class="col-xs-4 eight"></div>
+            <div class="col-xs-4 nine"></div>
+          </div>
+        </div>
+        <div class="wrapper-with-intrinsic-ratio">
+  <div class="element-to-stretch"></div>
+</div>
       </div>
     </body>
 </html>
