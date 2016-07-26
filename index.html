@@ -8,55 +8,51 @@
     </head>
     <body class="container-fluid">
 
-
-
-
-      <nav class="navbar navbar-default">
+      <nav class="navbar" id="navbar-default">
         <div class="container-fluid">
+
+          <!-- sign out button -->
           <form class="navbar-form navbar-right" id="sign-out">
             <div class="form-group">
               <button type="submit" class="btn btn-default" name="submit">Sign Out</button>
             </div>
           </form>
+
+          <!-- form for email and password -->
           <form class="navbar-form navbar-right" id="sign-in" role="search">
-            <div class="form-group">
+            <div class="form-group group-sign-in">
               <input type="text" class="form-control" name="credentials[email]" placeholder="e-mail">
               <input type="password" class="form-control" name="credentials[password]" placeholder="password">
             </div>
-            <button type="submit" class="btn btn-default" name="submit">Sign In</button>
+
+            <!-- sign in button -->
+            <button type="submit" class="btn btn-default group-sign-in" name="submit">Sign In</button>
           </form>
+
+          <!-- sign up button -->
+          <form class="navbar-form navbar-left" id="sign-up">
+            <div class="form-group">
+              <button type="submit" class="btn btn-default" name="submit">Sign Up</button>
+            </div>
+          </form>
+          
+          <!-- change password form -->
+          <form class="navbar-form navbar-right" id="change-password" role="search">
+            <div class="form-group group-sign-in">
+              <input type="text" class="form-control" name="passwords[old]" placeholder="old password">
+              <input type="password" class="form-control" name="passwords[new]" placeholder="new password">
+            </div>
+
+          <!-- change password button -->
+          <form class="navbar-form navbar-right" id="change-password" role="search">
+            <button type="submit" class="btn btn-default group-sign-in" name="submit">Change Password</button>
+          </form>
+
           </nav>
         </div>
       </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!--       <nav class="navbar">
-       <form class="navbar-form navbar-left" id="sign-in" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" name="credentials[email]" placeholder="e-mail">
-            <input type="password" class="form-control" name="credentials[password]" placeholder="password">
-          </div>
-          <button type="submit" class="btn btn-default" name="submit">Sign In</button>
-        </form>
-        <form class="navbar-form navbar-left" id="sign-out">
-          <div class="form-group">
-            <button type="submit" class="btn btn-default" name="submit">Sign Out</button>
-          </div>
-      </form>
-      </nav>
--->
-  <!--    <h1>Example</h1>
+      <h1>Example</h1>
     <h1>API Token Auth</h1>
           <form id="sign-up">
             <fieldset>
@@ -67,8 +63,8 @@
               <input type="submit" name="submit" value="Sign up!">
             </fieldset>
           </form>
--->
-<!--          <form id="sign-in">
+
+          <form id="sign-in">
             <fieldset>
               <legend>Sign in!</legend>
               <input type="text" name="credentials[email]" placeholder="e-mail">
@@ -85,36 +81,35 @@
               <input type="submit" name="submit" value="Change Password">
             </fieldset>
           </form>
--->
-<!--          <form id="sign-out">
+
+        <form id="sign-out">
             <fieldset>
               <legend>Sign Out</legend>
               <input type="submit" name="submit" value="Sign Out">
             </fieldset>
           </form> -->
           <p>Accessing an authenticated API.</p>
-
+    <div class="message">
+    </div>
       <div class="board">
         <div class="container">
+          <div class="col-xs-4 message"><h2>I am your display</h2></div>
           <div class="row">
-            <div class="col-xs-4 one"></div>
-            <div class="col-xs-4 two"></div>
-            <div class="col-xs-4 three"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 one"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 two"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 three"></div>
           </div>
           <div class="row">
-            <div class="col-xs-4 four"></div>
-            <div class="col-xs-4 five"></div>
-            <div class="col-xs-4 six"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 four"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 five"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 six"></div>
           </div>
           <div class="row">
-            <div class="col-xs-4 seven"></div>
-            <div class="col-xs-4 eight"></div>
-            <div class="col-xs-4 nine"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 seven"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 eight"></div>
+            <div class="col-xs-4 col-md-3 col-lg-2 nine"></div>
           </div>
         </div>
-        <div class="wrapper-with-intrinsic-ratio">
-  <div class="element-to-stretch"></div>
-</div>
       </div>
 
 
