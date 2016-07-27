@@ -40,8 +40,13 @@ const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
-  $('#sign-out').click('submit', onSignOut);
+  $('#sign-out').on('submit', onSignOut);
+
+
+
+
 };
+
 
 module.exports = {
   addHandlers,
