@@ -16,6 +16,7 @@ const signOutSuccess = () => {
 };
 const failure = (error) => {
   console.error(error);
+  
 };
 
 module.exports = {

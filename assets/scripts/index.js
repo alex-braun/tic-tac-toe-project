@@ -5,8 +5,10 @@
 
 // use require without a reference to ensure a file is bundled
 const authEvents = require('./auth/events');
-
+const gameEvents = require('./gameAction/game');
 // On document ready
 $(() => {
   authEvents.addHandlers();
+  //gameEvents.addHandlers();
+  gameEvents.gameHandlers();
 });

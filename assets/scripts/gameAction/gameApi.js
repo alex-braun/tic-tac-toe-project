@@ -9,7 +9,7 @@ const app = require('./app');
     },
   });
 
-  const gamesCreate = (data) => $.ajax({
+/*  const gamesCreate = (data) => $.ajax({
       url: app.api + '/games',
       method: 'POST',
       data,

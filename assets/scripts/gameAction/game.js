@@ -27,6 +27,9 @@ let whoseTurn = 0;
 //let gridLocation = '';
 //let player = 0;
 let cells = ['','','','','','','','',''];
+let xPicks = [];
+let oPicks = [];
+let over = "false";
 //let turnCount = 0;
 //let gridNumbers = [];
 // const pickPlayer = function() {
@@ -40,26 +43,62 @@ let cells = ['','','','','','','','',''];
 const playGame = function() {
 
 $('.grid').click(function() {
-  if (whoseTurn === 0) {
+  if (whoseTurn % 2 === 0) {
     $(this).append(player_x).off();
     let gridLocation = $(this).attr('id');
     let gridNumber = gameArray.indexOf(gridLocation);
+    xPicks.push(gridNumber);
     cells[gridNumber] = player_x;
     whoseTurn++;
     console.log(cells);
-  }  else if (whoseTurn === 1) {
+    console.log(xPicks);
+  }  else if (whoseTurn % 2 !== 0) {
     $(this).append(player_o).off();
     let gridLocation = $(this).attr('id');
     let gridNumber = gameArray.indexOf(gridLocation);
+    oPicks.push(gridNumber);
     cells[gridNumber] = player_o;
-    whoseTurn--;
+    whoseTurn++;
     console.log(cells);
-}
+    console.log(oPicks);
+  }
+  if (xPicks.includes(0)&& xPicks.includes(1)&& xPicks.includes(2)||
+      xPicks.includes(3)&& xPicks.includes(4)&& xPicks.includes(5)||
+      xPicks.includes(6)&& xPicks.includes(7)&& xPicks.includes(8)||
+      xPicks.includes(0)&& xPicks.includes(3)&& xPicks.includes(6)||
+      xPicks.includes(1)&& xPicks.includes(4)&& xPicks.includes(7)||
+      xPicks.includes(2)&& xPicks.includes(5)&& xPicks.includes(8)||
+      xPicks.includes(0)&& xPicks.includes(4)&& xPicks.includes(8)||
+      xPicks.includes(2)&& xPicks.includes(4)&& xPicks.includes(6)) {
+        console.log("X wins!");
+        over = true;
+  } else if (oPicks.includes(0)&& oPicks.includes(1)&& oPicks.includes(2)||
+      oPicks.includes(3)&& oPicks.includes(4)&& oPicks.includes(5)||
+      oPicks.includes(6)&& oPicks.includes(7)&& oPicks.includes(8)||
+      oPicks.includes(0)&& oPicks.includes(3)&& oPicks.includes(6)||
+      oPicks.includes(1)&& oPicks.includes(4)&& oPicks.includes(7)||
+      oPicks.includes(2)&& oPicks.includes(5)&& oPicks.includes(8)||
+      oPicks.includes(0)&& oPicks.includes(4)&& oPicks.includes(8)||
+      oPicks.includes(2)&& oPicks.includes(4)&& oPicks.includes(6)) {
+        console.log("O wins!");
+        over = true;
+  } else if (whoseTurn === 9) {
+        console.log("Tie Game!!");
+        over = true;
+  }
 });
 return cells;
 };
 
-
+// if (xPicks.includes(0)&& xPicks.includes(1)&& xPicks.includes(2)||
+//     xPicks.includes(3)&& xPicks.includes(4)&& xPicks.includes(5)||
+//     xPicks.includes(6)&& xPicks.includes(7)&& xPicks.includes(8)||
+//     xPicks.includes(0)&& xPicks.includes(3)&& xPicks.includes(6)||
+//     xPicks.includes(1)&& xPicks.includes(4)&& xPicks.includes(7)||
+//     xPicks.includes(2)&& xPicks.includes(5)&& xPicks.includes(8)||
+//     xPicks.includes(0)&& xPicks.includes(4)&& xPicks.includes(8)||
+//     xPicks.includes(2)&& xPicks.includes(4)&& xPicks.includes(6)||
+//}
 //function playGame() {
   //if (whoseTurn === 0) {
   //  fillCells(player_x);

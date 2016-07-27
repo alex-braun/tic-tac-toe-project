@@ -42,6 +42,18 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
 
+  $('.sign-in-button').click(function() {
+  $('#sign-in-modal').modal('hide');
+  });
+  $('.sign-out-button').click(function() {
+  $('#sign-out-modal').modal('hide');
+  });
+  $('.sign-up-button').click(function() {
+  $('#sign-up-modal').modal('hide');
+  });
+  $('.change-password-button').click(function() {
+  $('#change-password-modal').modal('hide');
+  });
 
 
 

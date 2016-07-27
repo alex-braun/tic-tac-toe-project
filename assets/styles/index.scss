@@ -1,14 +1,43 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$border-color: #000;
+$background: #008080;
 
-.game-board {
-  height: 500px;
-  width: 50%;
+body {
+  background-image: url('../../images/wood-texture0020.jpg');
 }
 
-.spot {
-  border: 1px solid black;
-  height: 166.66px;
-  width: 33%;
-  float:left;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+.col-xs-4 {
+  border: 1px solid $border-color;
+  padding-bottom: 35%;
+}
+
+.col-md-4 {
+  max-width: 70%;
+}
+
+.form-control {
+  max-width: 25%;
+}
+
+.container {
+
 }
