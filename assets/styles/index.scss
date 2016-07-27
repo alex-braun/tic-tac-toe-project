@@ -9,19 +9,19 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 45%;
+    max-width: 35%;
   }
 }
 
 @media (max-width: 1199px) {
   .container {
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: 80%;
+    max-width: 75%;
   }
 }
 
