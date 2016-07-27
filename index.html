@@ -7,44 +7,43 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-
+<!--
       <nav class="navbar" id="navbar-default">
         <div class="container-fluid">
 
-          <!-- sign out button -->
-          <form class="navbar-form navbar-right" >
+          sign out button
+          <form class="navbar-form navbar-right" id="sign-out">
             <div class="form-group">
-              <button id="sign-out" type="submit" class="btn btn-default" name="submit">Sign Out</button>
+              <button type="submit" class="btn btn-default" name="submit">Sign Out</button>
             </div>
           </form>
 
-          <!-- form for email and password -->
+          form for email and password
           <form class="navbar-form navbar-right" id="sign-in" role="search">
             <div class="form-group group-sign-in">
               <input type="text" class="form-control" name="credentials[email]" placeholder="e-mail">
               <input type="password" class="form-control" name="credentials[password]" placeholder="password">
-            </div>
 
-            <!-- sign in button -->
+            sign in button
             <button type="submit" class="btn btn-default group-sign-in" name="submit">Sign In</button>
+          </div>
           </form>
 
-          <!-- sign up button -->
+          sign up button
           <form class="navbar-form navbar-left" id="sign-up">
             <div class="form-group">
               <button type="submit" class="btn btn-default" name="submit">Sign Up</button>
             </div>
           </form>
-          <form class="navbar-form navbar-left" id="sign-up">
 
-          <!-- change password form -->
+          change password form
           <form class="navbar-form navbar-right" id="change-password" role="search">
             <div class="form-group group-sign-in">
               <input type="text" class="form-control" name="passwords[old]" placeholder="old password">
               <input type="password" class="form-control" name="passwords[new]" placeholder="new password">
             </div>
 
-          <!-- change password button -->
+          change password button
           <form class="navbar-form navbar-right" id="change-password" role="search">
             <button type="submit" class="btn btn-default group-sign-in" name="submit">Change Password</button>
           </form>
@@ -89,30 +88,135 @@
               <input type="submit" name="submit" value="Sign Out">
             </fieldset>
           </form> -->
-          <p>Accessing an authenticated API.</p>
-    <div class="message">
+
+
+<nav class="navbar">
+  <div class="container-fluid">
+      <form class="navbar-form navbar-right">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-modal">
+          Sign In</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-modal">
+          Sign Out</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-up-modal">
+          Sign Up</button>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#change-password-modal">
+          Change Password</button>
+      </form>
+  </div>
+</nav>
+
+<!-- SIGN IN MODAL -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-in">
+          <fieldset>
+            <input type="text" name="credentials[email]" placeholder="e-mail">
+            <input type="password" name="credentials[password]" placeholder="password">
+            <input type="submit" name="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
     </div>
-      <div class="board">
+  </div>
+</div>
+
+
+
+<!-- SIGN OUT MODAL -->
+<div class="modal fade" id="sign-out-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-out">
+            <fieldset>
+              <input type="submit" name="submit" value="Sign Out">
+            </fieldset>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SIGN UP MODAL -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <fieldset>
+            <input type="text" name="credentials[email]" placeholder="e-mail">
+            <input type="password" name="credentials[password]" placeholder="password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="password">
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- CHANGE PASSWORD MODAL -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="change-password">
+          <fieldset>
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="title">
+  <h1>TIC-TAC-TOE</h1>
+</div>
+  <div class="game-button">
+    <button type="button" class="btn btn-default start-game" data-toggle="modal">
+      Start Game</button>
+  </div>
         <div class="container">
-          <div class="col-xs-4 message"><h2>I am your display</h2></div>
           <div class="row">
-            <div class="col-xs-4 col-md-3 col-lg-2 one"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 two"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 three"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C3" data-value=""></div>
           </div>
           <div class="row">
-            <div class="col-xs-4 col-md-3 col-lg-2 four"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 five"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 six"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C3" data-value=""></div>
           </div>
           <div class="row">
-            <div class="col-xs-4 col-md-3 col-lg-2 seven"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 eight"></div>
-            <div class="col-xs-4 col-md-3 col-lg-2 nine"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C3" data-value=""></div>
           </div>
         </div>
-      </div>
-
 
     </body>
 </html>
