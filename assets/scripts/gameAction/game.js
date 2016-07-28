@@ -1,4 +1,5 @@
 'use strict';
+//const playGame = function() {
 //arrays and variables
 const gameArray = ['R1C1','R1C2','R1C3','R2C1','R2C2','R2C3','R3C1','R3C2','R3C3'];
 const player_x = 'x';
@@ -9,28 +10,40 @@ let xPicks = [];
 let oPicks = [];
 let over = false;
 
+let resetGame = function() {
+  //$('.start-game').on();
+  //$('grid').click();
+  $('.grid').empty();
+  $('.message-board').empty();
+  over = false;
+  cells = ['','','','','','','','',''];
+  whoseTurn = 0;
+  xPicks = [];
+  oPicks = [];
+  console.log(whoseTurn);
+};
 //the game logic is contained within this function lines 13-68
 const playGame = function() {
-$('.grid').click(function() {
+$('.grid').one('click',function() {
   if (whoseTurn % 2 === 0) {
     $(this).append(player_x).off();
-    let gridLocation = $(this).attr('id');
+    let gridLocation = $(this).data('value');
     let gridNumber = gameArray.indexOf(gridLocation);
     xPicks.push(gridNumber);
     cells[gridNumber] = player_x;
-    whoseTurn++;
+    ++whoseTurn;
     //console.log(cells);
-    console.log(xPicks);
-  }  else if (whoseTurn % 2 !== 0) {
+    //console.log(xPicks);
+}  else if (whoseTurn % 2 !== 0) {
     $(this).append(player_o).off();
-    let gridLocation = $(this).attr('id');
+    let gridLocation = $(this).data('value');
     let gridNumber = gameArray.indexOf(gridLocation);
     oPicks.push(gridNumber);
     cells[gridNumber] = player_o;
-    whoseTurn++;
+    ++whoseTurn;
     //console.log(cells);
-    console.log(oPicks);
-  } //conditional statements to determine winners or a tie
+    //console.log(oPicks);
+} //conditional statements to determine winners or a tie
   if (xPicks.includes(0)&& xPicks.includes(1)&& xPicks.includes(2)||
       xPicks.includes(3)&& xPicks.includes(4)&& xPicks.includes(5)||
       xPicks.includes(6)&& xPicks.includes(7)&& xPicks.includes(8)||
@@ -62,30 +75,26 @@ $('.grid').click(function() {
       $('.grid').off();
       //$('.start-game').off();
       //$('.reset-game').show('button');
+
   }
   console.log(cells);
+  console.log(whoseTurn);
   return cells;
 });
-
-$('.reset-game').on('click', function () {
-  $('.start-game').on();
-  $('grid').on();
-  $('.grid').empty();
-  $('.message-board').empty();
-  over = false;
-  cells = ['','','','','','','','',''];
-  whoseTurn = 0;
-  xPicks = [];
-  oPicks = [];
-});
 };
 
-const gameHandlers = () => {
-$('.start-game').on('click', playGame);
+const addGameHandlers = () => {
+  $('.create-game').on('click', playGame);
+  $('.reset-game').on('click', resetGame);
+
 };
+//const gameHandlers = () => {
+//$('.create-game').on('click', playGame);
+//};
 
 
 module.exports = {
-
-  gameHandlers,
+  playGame,
+  addGameHandlers,
+  resetGame,
 };

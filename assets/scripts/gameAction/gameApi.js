@@ -1,23 +1,23 @@
 'use strict';
-const app = require('./app');
+const app = require('../app');
 
-  const gamesIndex = () => $.ajax({
-    url: app.api + '/games',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
+  // const gamesIndex = () => $.ajax({
+  //   url: app.api + '/games',
+  //   method: 'GET',
+  //   headers: {
+  //     Authorization: 'Token token=' + app.user.token,
+  //   },
+  // });
 
-/*  const gamesCreate = (data) => $.ajax({
-      url: app.api + '/games',
+  const gameCreate = (data) => $.ajax({
+      url: app.api + '/game',
       method: 'POST',
       data,
       headers: {
         Authorization: 'Token token=' + app.user.token,
       },
     });
-
+/*
   const gamesShow = (data) => $.ajax({
       url: app.api + '/games/'+app.user.id,
       method: 'GET',
@@ -47,8 +47,8 @@ If a player gets 3 of their player types in a row, that player wins.
 */
 
 module.exports = {
-  gamesIndex,
-  gamesCreate,
-  gamesShow,
-  gamesUpdate,
+  //gamesIndex,
+  gameCreate,
+  //gamesShow,
+  //gamesUpdate,
 };
