@@ -4,46 +4,50 @@
 const gameArray = ['R1C1','R1C2','R1C3','R2C1','R2C2','R2C3','R3C1','R3C2','R3C3'];
 const player_x = 'x';
 const player_o = 'o';
-let whoseTurn = 0;
+let turnCount = 0;
 let cells = ['','','','','','','','',''];
 let xPicks = [];
 let oPicks = [];
 let over = false;
 
+//Resets the game variables and events after pressing the "Reset Game" button
 let resetGame = function() {
-  //$('.start-game').on();
-  //$('grid').click();
   $('.grid').empty();
   $('.message-board').empty();
   over = false;
   cells = ['','','','','','','','',''];
-  whoseTurn = 0;
+  turnCount = 0;
   xPicks = [];
   oPicks = [];
-  console.log(whoseTurn);
+  console.log(turnCount);
 };
-//the game logic is contained within this function lines 13-68
+
+//The game logic is contained within this function
 const playGame = function() {
-$('.grid').one('click',function() {
-  if (whoseTurn % 2 === 0) {
-    $(this).append(player_x).off();
+
+$('.reset-game').off();
+$('.grid').one('click',function(player) {
+
+  if (turnCount % 2 === 0) {
+    player = player_x;
+  } else {
+    player = player_o;
+  }
+
+    $(this).append(player).off();
+
     let gridLocation = $(this).data('value');
     let gridNumber = gameArray.indexOf(gridLocation);
+    cells[gridNumber] = player;
+
+  if (player === player_x) {
     xPicks.push(gridNumber);
-    cells[gridNumber] = player_x;
-    ++whoseTurn;
-    //console.log(cells);
-    //console.log(xPicks);
-}  else if (whoseTurn % 2 !== 0) {
-    $(this).append(player_o).off();
-    let gridLocation = $(this).data('value');
-    let gridNumber = gameArray.indexOf(gridLocation);
+  } else if (player === player_o) {
     oPicks.push(gridNumber);
-    cells[gridNumber] = player_o;
-    ++whoseTurn;
-    //console.log(cells);
-    //console.log(oPicks);
-} //conditional statements to determine winners or a tie
+  }
+
+  turnCount++;
+
   if (xPicks.includes(0)&& xPicks.includes(1)&& xPicks.includes(2)||
       xPicks.includes(3)&& xPicks.includes(4)&& xPicks.includes(5)||
       xPicks.includes(6)&& xPicks.includes(7)&& xPicks.includes(8)||
@@ -52,9 +56,10 @@ $('.grid').one('click',function() {
       xPicks.includes(2)&& xPicks.includes(5)&& xPicks.includes(8)||
       xPicks.includes(0)&& xPicks.includes(4)&& xPicks.includes(8)||
       xPicks.includes(2)&& xPicks.includes(4)&& xPicks.includes(6)) {
-        console.log("X wins!");
+
         $('.message-board').text("Player X WINS");
         over = true;
+
   } else if (oPicks.includes(0)&& oPicks.includes(1)&& oPicks.includes(2)||
       oPicks.includes(3)&& oPicks.includes(4)&& oPicks.includes(5)||
       oPicks.includes(6)&& oPicks.includes(7)&& oPicks.includes(8)||
@@ -63,35 +68,32 @@ $('.grid').one('click',function() {
       oPicks.includes(2)&& oPicks.includes(5)&& oPicks.includes(8)||
       oPicks.includes(0)&& oPicks.includes(4)&& oPicks.includes(8)||
       oPicks.includes(2)&& oPicks.includes(4)&& oPicks.includes(6)) {
-        console.log("O wins!");
+
         $('.message-board').text("Player O WINS");
         over = true;
-  } else if (whoseTurn === 9) {
-        console.log("Tie Game!!");
+
+  } else if (turnCount === 9) {
+
         $('.message-board').text("It's a TIE");
         over = true;
+
   }
   if (over === true) {
       $('.grid').off();
+      $('.reset-game').on('click',resetGame);
       //$('.start-game').off();
-      //$('.reset-game').show('button');
 
   }
   console.log(cells);
-  console.log(whoseTurn);
+  console.log(turnCount);
   return cells;
 });
 };
 
 const addGameHandlers = () => {
   $('.create-game').on('click', playGame);
-  $('.reset-game').on('click', resetGame);
 
 };
-//const gameHandlers = () => {
-//$('.create-game').on('click', playGame);
-//};
-
 
 module.exports = {
   playGame,
