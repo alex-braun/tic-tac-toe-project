@@ -10,15 +10,16 @@ const app = require('../app');
   // });
 
   const gameCreate = (data) => $.ajax({
-      url: app.api + '/game',
+      url: app.api + '/games',
       method: 'POST',
       data,
       headers: {
         Authorization: 'Token token=' + app.user.token,
       },
     });
-/*
-  const gamesShow = (data) => $.ajax({
+
+
+  const gameShow = (data) => $.ajax({
       url: app.api + '/games/'+app.user.id,
       method: 'GET',
       data,
@@ -26,7 +27,7 @@ const app = require('../app');
         Authorization: 'Token token=' + app.user.token,
       },
   });
-
+/*
   const gamesUpdate = (data) => $.ajax({
       url: app.api + '/games/' + app.user.id,
       method: 'PATCH',
@@ -35,8 +36,6 @@ const app = require('../app');
         Authorization: 'Token token=' + app.user.token,
       },
   });
-
-
 
 
 /*If a player does not make a selection and hits the selection button, issue an
@@ -49,6 +48,6 @@ If a player gets 3 of their player types in a row, that player wins.
 module.exports = {
   //gamesIndex,
   gameCreate,
-  //gamesShow,
+  gameShow,
   //gamesUpdate,
 };

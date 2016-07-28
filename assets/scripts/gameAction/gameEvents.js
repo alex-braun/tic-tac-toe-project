@@ -1,5 +1,5 @@
 'use strict';
-
+const getFormFields = require('../../../lib/get-form-fields');
 const gameApi = require('./gameApi');
 const gameUi = require('./gameUi');
 const game = require('./game');
@@ -17,22 +17,31 @@ const game = require('./game');
 //       .fail(gameUi.onError);
 //   }
 // };onCreateGame
+
 const onCreateGame = function (event) {
+  let data = getFormFields(this);
   event.preventDefault();
-  gameApi.gameCreate(event.target)
+  gameApi.gameCreate(data)
     .done(gameUi.createSuccess)
-    .fail(gameUi.onError);
+    .fail(gameUi.failure);
 };
 
-const addGameHandlers = () => {
-  $('.create-game').on('click', function () {
-    //onCreateGame();
-    game.playGame();
-});
+const onShowGame = function (event) {
+  let data = getFormFields(this);
+  event.preventDefault();
+  gameApi.gameCreate(data)
+    .done(gameUi.createSuccess)
+    .fail(gameUi.failure);
 };
+
+
+const addGameHandlers = () => {
+  $('.create-game').on('click',game.startGame);
+  $('.create-game').on('click',onCreateGame);
+
+};
+
 
 module.exports = {
   addGameHandlers,
-//  onGetGames,
-  //onCreateGame,
 };
