@@ -1,5 +1,5 @@
 'use strict';
-//const playGame = function() {
+const gameUi = require('./gameUi');
 //arrays and variables
 const gameArray = ['R1C1','R1C2','R1C3','R2C1','R2C2','R2C3','R3C1','R3C2','R3C3'];
 const player_x = 'x';
@@ -83,6 +83,7 @@ const playGame = function() {
       $('.grid').off();
   }
   //++turnCount;
+  console.log(gameUi.listOfUserGames);
   console.log(turnCount);
   return cells;
   };
@@ -93,6 +94,11 @@ let startGame = function() {
 };
 
 $('.reset-game').on('click',resetGame);
+// $('.show-all-games').on('click', function() {
+//   for (let i = 0; i < gameUi.listOfUserGames.length; i++) {
+//     alert(gameUi.listOfUserGames[i]);
+//   }
+// });
 //};
 module.exports = {
   startGame,
