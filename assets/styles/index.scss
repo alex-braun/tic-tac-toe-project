@@ -37,19 +37,85 @@ body {
 
 }
 
+.container {
+  width: 70%;
+  // padding-bottom: 30%;
+}
+
+.grid {
+  width: 33%;
+  max-width: 33%;
+  height:100%;
+  max-height: 100px;
+  // height: 100px;
+  // border: 10px solid $border-color;
+  float: left;
+  padding-bottom: 30%;
+}
+
+
+.grid-one {
+  border-bottom: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+}
+
+.grid-two {
+  border-bottom: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+}
+
+.grid-three {
+  border-left: 10px solid $border-color;
+  border-bottom: 10px solid $border-color;
+}
+
+.grid-four {
+  border-bottom: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+}
+
+.grid-five {
+  border: 10px solid $border-color;
+}
+
+.grid-six {
+  border-bottom: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+}
+
+.grid-seven {
+  border-top: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+}
+
+.grid-eight {
+  border-top: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+}
+
+.grid-nine {
+  border-top: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+}
 .col-xs-4 {
   border: 1px solid $border-color;
   padding-bottom: 35%;
 }
 
-.col-md-4 {
-  max-width: 70%;
-}
+// .col-md-4 {
+//   max-width: 70%;
+//   margin:0px;
+// }
+//
+// .form-control {
+//   max-width: 25%;
+// }
 
-.form-control {
-  max-width: 25%;
-}
-
-.container {
-
+.game-console {
+  margin: 5px;
+  position: relative;
 }

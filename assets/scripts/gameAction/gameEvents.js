@@ -3,7 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 const gameApi = require('./gameApi');
 const gameUi = require('./gameUi');
 const game = require('./game');
-let viewUserGames;
+
 // const onGetGames = function (event) {
 //   event.preventDefault();
 //   let gameId = $(event.target).find('[name="book[id]"]').val();
@@ -24,14 +24,23 @@ const onCreateGame = function (event) {
   gameApi.gameCreate(data)
     .done(gameUi.createSuccess)
     .fail(gameUi.failure);
+    app.game = data.game;
 };
 
 const onShowAllGames = function (event) {
   event.preventDefault();
-  let userGames = gameUi.gameId;
-  viewUserGames = userGames;
-  gameApi.gamesShow(userGames)
+  let data = gameUi.gameId;
+
+  gameApi.gamesShow(data)
     .done(gameUi.showAllSuccess)
+    .fail(gameUi.failure);
+};
+
+const onShowGame = function (event) {
+  let data = getFormFields(this);
+  event.preventDefault();
+  gameApi.gameShow(data)
+    .done(gameUi.showSuccess)
     .fail(gameUi.failure);
 };
 // const onShowGame = function (event) {
@@ -72,9 +81,8 @@ const addGameHandlers = () => {
   $('.create-game').on('click',game.startGame);
   $('.create-game').on('click',onCreateGame);
   $('.show-all-games').on('click',onShowAllGames);
-  $('.show-all-games').on('click',function() {
-    alert(viewUserGames);
-  });
+  $('.show-game').on('click',onShowGame);
+
 };
 
 
