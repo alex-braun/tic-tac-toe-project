@@ -536,10 +536,10 @@ webpackJsonp([0],[
 	  var player = 0;
 	  if (turnCount % 2 === 0) {
 	    player = player_x;
-	    $(this).prepend('<img src="../images/letter-x_318-26692.png" height="100%" width="100%">').off();
+	    $(this).prepend('<img src="../images/letterx.png" height="100%" width="100%">').off();
 	  } else {
 	    player = player_o;
-	    $(this).prepend('<img src="../images/1188456-circle_metro.gif" height="100%" width="100%">').off();
+	    $(this).prepend('<img src="../images/circle.gif" height="100%" width="100%">').off();
 	  }
 	  // $('#test').empty().append('<img src="/static/on.png" height="64px" width="64px">')
 	  // $(this).prepend('<img src="../images/letter-x_318-26692.png" height="125px" width="125px">').off();
