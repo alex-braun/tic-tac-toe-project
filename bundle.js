@@ -232,7 +232,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'https://tic-tac-toe.wdibos.com'
+	  // api: 'http://tic-tac-toe.wdibos.com',
+	  api: 'https://aqueous-atoll-85096.herokuapp.com'
 	};
 
 	module.exports = app;
@@ -299,53 +300,21 @@ webpackJsonp([0],[
 	// const onUpdateGame = function (event) {
 	//
 	// }
+
+	// const onUpdateGame = function (event) {
+	//   event.preventDefault();
+	//   gameApi.update(event.target)
+	//     .done(ui.onUpdate)
+	//     .fail(ui.onError);
+	// };
+
+
 	var onShowAllGames = function onShowAllGames(event) {
 	  event.preventDefault();
 	  var data = gameUi.gameId;
 
 	  gameApi.gamesShowAll(data).done(gameUi.showAllSuccess).fail(gameUi.failure);
 	};
-
-	// const onShowGame = function (event) {
-	//   let data = getFormFields(this);
-	//   event.preventDefault();
-	//   gameApi.gameShow(data)
-	//     .done(findGame)
-	//     .fail(gameUi.failure);
-	// };
-	// const onShowGame = function (event) {
-	//   event.preventDefault();
-	//   let bookId = $('#book-id').val();
-	//
-	//   if (bookId.length === 0) {
-	//     libraryApi.index()
-	//       .done(ui.onSuccess)
-	//       .fail(ui.onError);
-	//   } else {
-	//     libraryApi.show(bookId)
-	//       .done(ui.onSuccess)
-	//       .fail(ui.onError);
-	//   }
-	// };
-
-	//const onGetBooks = function(event) {
-	//event.preventDefault();
-	//bookId gets the number value from the text box
-	//   let bookId = $('.book-id').val();
-	// //if bookId has a value, the library-api.js function 'show' is called.
-	// //this will run the GET ajax method and pass in bookId as a parameter,
-	// //the correct url for the requested book.
-	// //Next, ui.onSuccess calls the onSuccess function from ui.js.
-	//   if (bookId.length === 0) {
-	//     libraryApi.index()
-	//       .done(ui.onSuccess)
-	//       .fail(ui.onError);
-	//     } else {
-	//     libraryApi.show(bookId)
-	//       .done(ui.onSuccess)
-	//       .fail(ui.onError);
-	//   }
-	// };
 
 	var addGameHandlers = function addGameHandlers() {
 	  $('.create-game').on('click', game.startGame);
@@ -373,13 +342,6 @@ webpackJsonp([0],[
 	var app = __webpack_require__(6);
 	var gameUi = __webpack_require__(10);
 
-	// const gamesIndex = () => $.ajax({
-	//   url: app.api + '/games',
-	//   method: 'GET',
-	//   headers: {
-	//     Authorization: 'Token token=' + app.user.token,
-	//   },
-	// });
 	var gameCreate = function gameCreate() {
 	  return $.ajax({
 	    url: app.api + '/games',
@@ -413,23 +375,6 @@ webpackJsonp([0],[
 	  });
 	};
 
-	// success: function(data){
-	//
-	// jsonObject = JSON.stringify(data);
-	// alert(jsonObject);
-	// }
-	// success: function(data){
-	// alert(data.user.games);
-	// }
-	// };
-
-
-	//   const show = function (bookId) {
-	//   return $.ajax({
-	//     url: app.host + '/books/' + bookId,
-	//     method: 'GET',
-	//   });
-	// };
 	/*
 	  const gamesUpdate = (data) => $.ajax({
 	      url: app.api + '/games/' + app.user.id,
