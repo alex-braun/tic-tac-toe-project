@@ -93,13 +93,13 @@
 <nav class="navbar">
   <div class="container-fluid">
       <form class="navbar-form navbar-right">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-in-modal">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-modal">
           Sign In</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-out-modal">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-modal">
           Sign Out</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-up-modal">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-up-modal">
           Sign Up</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#change-password-modal">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#change-password-modal">
           Change Password</button>
       </form>
   </div>
@@ -118,7 +118,7 @@
           <fieldset>
             <input type="text" name="credentials[email]" placeholder="e-mail">
             <input type="password" name="credentials[password]" placeholder="password">
-            <input type="submit" name="submit" class= "sign-in-button" value="Sign in!">
+            <input type="submit" name="submit" value="Sign in!">
           </fieldset>
         </form>
       </div>
@@ -139,7 +139,7 @@
       <div class="modal-body">
         <form id="sign-out">
             <fieldset>
-              <input type="submit" name="submit" class= "sign-out-button" value="Sign Out">
+              <input type="submit" name="submit" value="Sign Out">
             </fieldset>
           </form>
       </div>
@@ -163,7 +163,7 @@
             <input type="text" name="credentials[email]" placeholder="e-mail">
             <input type="password" name="credentials[password]" placeholder="password">
             <input type="password" name="credentials[password_confirmation]" placeholder="password">
-            <input type="submit" name="submit" class= "sign-up-button" value="Sign up!">
+            <input type="submit" name="submit" value="Sign up!">
           </fieldset>
         </form>
       </div>
@@ -185,81 +185,38 @@
           <fieldset>
             <input type="password" name="passwords[old]" placeholder="old password">
             <input type="password" name="passwords[new]" placeholder="new password">
-            <input type="submit" name="submit" class= "change-password-button" value="Change Password">
+            <input type="submit" name="submit" value="Change Password">
           </fieldset>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-<!-- SHOW GAME MODAL -->
-<div class="modal fade" id="show-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Show Game</h4>
-      </div>
-      <div class="modal-body">
-        <form id="show-game">
-          <fieldset>
-            <input type="text" name="game[id]" placeholder="id#">
-            <input type="submit" name="submit" class= "search-game-button" value="GET">
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="title">
   <h1>TIC-TAC-TOE</h1>
 </div>
-  <div class="game-buttons">
-      <!-- <button type="button" class="btn btn-info show-all-games game-console">
-        User Games</button> -->
-
-        <button type="button" class="btn btn-info show-game game-console" data-toggle="modal" data-target="#show-game-modal">
-        Show Game</button>
-
-      <div class="buttons-row-two">
-        <button type="button" class="btn btn-success create-game game-console">
-        Start Game</button>
-
-        <button type="button" class="btn btn-info reset-game game-console">
-          Reset Game</button>
-      </div>
+  <div class="game-button">
+    <button type="button" class="btn btn-default start-game" data-toggle="modal">
+      Start Game</button>
   </div>
-<div id="response"></div>
-  <div class="message-board"></div>
         <div class="container">
           <div class="row">
-            <div class="grid-one grid" data-value="R1C1"></div>
-            <div class="grid-two grid" data-value="R1C2"></div>
-            <div class="grid-three grid" data-value="R1C3"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R1C3" data-value=""></div>
           </div>
           <div class="row">
-            <div class="grid-four grid" data-value="R2C1"></div>
-            <div class="grid-five grid" data-value="R2C2"></div>
-            <div class="grid-six grid" data-value="R2C3"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R2C3" data-value=""></div>
           </div>
           <div class="row">
-            <div class="grid-seven grid" data-value="R3C1"></div>
-            <div class="grid-eight grid" data-value="R3C2"></div>
-            <div class="grid-nine grid" data-value="R3C3"></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C1" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C2" data-value=""></div>
+            <div class="col-xs-4 col-md-4 grid" id="R3C3" data-value=""></div>
           </div>
         </div>
+
     </body>
 </html>

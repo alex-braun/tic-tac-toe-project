@@ -10,46 +10,9 @@ const onShowGame = function (event) {
   // console.log(data);
   event.preventDefault();
   gameApi.gameShow(data)
-    .done(gameUi.gameSuccess)
+    .done(gameUi.showGameSuccess)
     .fail(gameUi.failure);
 };
-//   if (bookId.length === 0) {
-//     GameApi.index()
-//       .done(ui.onSuccess)
-//       .fail(ui.onError);
-//     } else {
-//     GameApi.show(bookId)
-//       .done(ui.onSuccess)
-//       .fail(ui.onError);
-//   }
-// };
-
-// $('.show-game').on('submit', findGame);
-// $('.search-game-button').click(function() {
-// $('#sign-in-modal').modal('hide');
-// });
-
-// $('.sign-in-button').click(function() {
-//   $('#sign-in-modal').modal('hide');
-//   });
-//
-// $('#sign-in').on('submit', onSignIn);
-
-
-
-// const onGetGames = function (event) {
-//   event.preventDefault();
-//   let gameId = $(event.target).find('[name="book[id]"]').val();
-//   if (gameId.length === 0) {
-//     gameApi.gamesIndex()
-//       .done(ui.onSuccess)
-//       .fail(ui.onError);
-//   } else {
-//     gameApi.show(event.target)
-//       .done(gameUi.onSuccess)
-//       .fail(gameUi.onError);
-//   }
-// };onCreateGame
 
 const onCreateGame = function (event) {
   let data = getFormFields(this);
@@ -59,6 +22,9 @@ const onCreateGame = function (event) {
     .fail(gameUi.failure);
 };
 
+const onUpdateGame = function (event) {
+  
+}
 // const onShowAllGames = function (event) {
 //   event.preventDefault();
 //   let data = gameUi.gameId;
@@ -112,7 +78,7 @@ const onCreateGame = function (event) {
 const addGameHandlers = () => {
   $('.create-game').on('click',game.startGame);
   $('.create-game').on('click',onCreateGame);
-  $('.show-all-games').on('click',onShowAllGames);
+  // $('.show-all-games').on('click',onShowAllGames);
   // $('.show-game').on('click',onShowGame);
   // $('.search-game-button').click(function() {
   $('#show-game').on('submit', onShowGame);

@@ -12,15 +12,15 @@ const createSuccess = function (data) {
   return createdGame;
 };
 
-const showAllSuccess = function (data) {
-  showAll = data.user;
-  if (data) {
-    console.log(data);
-    alert(JSON.stringify(data));
-  }
-};
+// const showAllSuccess = function (data) {
+//   showAll = data.user;
+//   if (data) {
+//     console.log(data);
+//     alert(JSON.stringify(data));
+//   }
+// };
 
-const gameSuccess = (data) => {
+const showGameSuccess = (data) => {
   app.game = data.game;
   console.log(app);
 };
@@ -33,8 +33,8 @@ const failure = (error) => {
 module.exports = {
   failure,
   createSuccess,
-  showAllSuccess,
-  gameSuccess,
+  // showAllSuccess,
+  showGameSuccess,
 
 
 };
