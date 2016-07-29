@@ -2,13 +2,7 @@
 const app = require('../app');
 const gameUi = require('./gameUi');
 
-  // const gamesIndex = () => $.ajax({
-  //   url: app.api + '/games',
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: 'Token token=' + app.user.token,
-  //   },
-  // });
+
   const gameCreate = () => $.ajax({
       url: app.api + '/games',
       method: 'POST',
@@ -37,23 +31,7 @@ const gameUi = require('./gameUi');
       },
   });
 
-  // success: function(data){
-  //
-  // jsonObject = JSON.stringify(data);
-  // alert(jsonObject);
-  // }
-  // success: function(data){
-  // alert(data.user.games);
-  // }
-// };
 
-
-//   const show = function (bookId) {
-//   return $.ajax({
-//     url: app.host + '/books/' + bookId,
-//     method: 'GET',
-//   });
-// };
 /*
   const gamesUpdate = (data) => $.ajax({
       url: app.api + '/games/' + app.user.id,
