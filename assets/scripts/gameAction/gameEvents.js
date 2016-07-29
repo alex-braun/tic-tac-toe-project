@@ -22,17 +22,17 @@ const onCreateGame = function (event) {
     .fail(gameUi.failure);
 };
 
-const onUpdateGame = function (event) {
-  
-}
-// const onShowAllGames = function (event) {
-//   event.preventDefault();
-//   let data = gameUi.gameId;
+// const onUpdateGame = function (event) {
 //
-//   gameApi.gamesShow(data)
-//     .done(gameUi.showAllSuccess)
-//     .fail(gameUi.failure);
-// };
+// }
+const onShowAllGames = function (event) {
+  event.preventDefault();
+  let data = gameUi.gameId;
+
+  gameApi.gamesShowAll(data)
+    .done(gameUi.showAllSuccess)
+    .fail(gameUi.failure);
+};
 
 // const onShowGame = function (event) {
 //   let data = getFormFields(this);
@@ -78,7 +78,7 @@ const onUpdateGame = function (event) {
 const addGameHandlers = () => {
   $('.create-game').on('click',game.startGame);
   $('.create-game').on('click',onCreateGame);
-  // $('.show-all-games').on('click',onShowAllGames);
+  $('.show-all-games').on('click',onShowAllGames);
   // $('.show-game').on('click',onShowGame);
   // $('.search-game-button').click(function() {
   $('#show-game').on('submit', onShowGame);

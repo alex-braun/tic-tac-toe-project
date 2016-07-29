@@ -16,6 +16,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
+  $('.player-id').text("User: " + data.id);
   api.signIn(data)
   .done(ui.signInSuccess)
   .fail(ui.failure);

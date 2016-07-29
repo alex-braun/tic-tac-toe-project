@@ -7,6 +7,7 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  $('.player-id').text("Hello, user: " + data.user.id);
   console.log(app);
 };
 
@@ -16,7 +17,7 @@ const signOutSuccess = () => {
 };
 const failure = (error) => {
   console.error(error);
-  
+
 };
 
 module.exports = {
