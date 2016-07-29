@@ -25,6 +25,15 @@ const onCreateGame = function (event) {
 // const onUpdateGame = function (event) {
 //
 // }
+
+// const onUpdateGame = function (event) {
+//   event.preventDefault();
+//   gameApi.update(event.target)
+//     .done(ui.onUpdate)
+//     .fail(ui.onError);
+// };
+
+
 const onShowAllGames = function (event) {
   event.preventDefault();
   let data = gameUi.gameId;
