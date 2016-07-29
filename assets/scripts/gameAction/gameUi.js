@@ -1,7 +1,8 @@
 'use strict';
 const app = require('../app');
-let showAll = {};
+let completedGames = 0;
 let createdGame;
+
 
 const createSuccess = function (data) {
   createdGame = data.game.id;
@@ -12,13 +13,18 @@ const createSuccess = function (data) {
   return createdGame;
 };
 
-// const showAllSuccess = function (data) {
-//   showAll = data.user;
-//   if (data) {
-//     console.log(data);
-//     alert(JSON.stringify(data));
-//   }
-// };
+const showAllSuccess = function (data) {
+  if (data) {
+    console.log(data.games.length);
+    for (let i = 0; i < data.games.length; i++) {
+      if (data.games[i].over === true) {
+        completedGames++;
+      }
+    }
+    $('.completed-games-count').text('You have finished ' + completedGames + ' out of ' + data.games.length + ' games.');
+    return completedGames;
+  }
+};
 
 const showGameSuccess = (data) => {
   app.game = data.game;
@@ -33,8 +39,9 @@ const failure = (error) => {
 module.exports = {
   failure,
   createSuccess,
-  // showAllSuccess,
+  showAllSuccess,
   showGameSuccess,
+
 
 
 };

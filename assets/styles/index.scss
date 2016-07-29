@@ -25,16 +25,45 @@ body {
   }
 }
 
+.title {
+  // border: 1px solid $border-color;
+  width: 50%;
+}
+
+.message-block {
+  float: right;
+  height: 100%;
+  max-height:100px;
+  max-width: 200px;
+  width: 40%;
+  // border: 1px solid $border-color;
+  font-family: Big Caslon, sans-serif;
+  text-align: right;
+}
+
 .game-buttons {
   display: inline-block;
 }
 
+.player-id {
+  float: right;
+  font-size: 20px;
+  height: 100%;
+  max-height: 20px;
+}
+
+.completed-games-count {
+  float: right;
+  font-size: 15px;
+  height: 100%;
+  max-height: 20px;
+}
+
 .message-board {
   //border: 1px solid $border-color;
-  font-size: 40px;
-  height: 50px;
+  font-size: 35px;
+  height: 40px;
   text-align: center;
-
 }
 
 .container {
