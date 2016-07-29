@@ -8,6 +8,7 @@ const createSuccess = function (data) {
   if (data.game) {
     console.log(data.game);
   }
+  app.user.id = data.game.id;
   return createdGame;
 };
 
@@ -19,11 +20,10 @@ const showAllSuccess = function (data) {
   }
 };
 
-const showSuccess = () => {
-
-    console.log(createdGame);
-  };
-
+const gameSuccess = (data) => {
+  app.game = data.game;
+  console.log(app);
+};
 
 const failure = (error) => {
   console.error(error);
@@ -34,7 +34,7 @@ module.exports = {
   failure,
   createSuccess,
   showAllSuccess,
-  showSuccess,
+  gameSuccess,
 
 
 };

@@ -93,13 +93,13 @@
 <nav class="navbar">
   <div class="container-fluid">
       <form class="navbar-form navbar-right">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-in-modal">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-in-modal">
           Sign In</button>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-out-modal">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-out-modal">
           Sign Out</button>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#sign-up-modal">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-up-modal">
           Sign Up</button>
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#change-password-modal">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#change-password-modal">
           Change Password</button>
       </form>
   </div>
@@ -193,23 +193,52 @@
   </div>
 </div>
 
+<!-- SHOW GAME MODAL -->
+<div class="modal fade" id="show-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Show Game</h4>
+      </div>
+      <div class="modal-body">
+        <form id="show-game">
+          <fieldset>
+            <input type="text" name="game[id]" placeholder="id#">
+            <input type="submit" name="submit" class= "search-game-button" value="GET">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="title">
   <h1>TIC-TAC-TOE</h1>
 </div>
   <div class="game-buttons">
-
-      <button type="button" class="btn btn-default show-all-games game-console">
+      <button type="button" class="btn btn-info show-all-games game-console">
         User Games</button>
 
-      <button type="button" class="btn btn-default show-game game-console">
+        <button type="button" class="btn btn-info show-game game-console" data-toggle="modal" data-target="#show-game-modal">
         Show Game</button>
 
       <div class="buttons-row-two">
-        <button type="button" class="btn btn-default create-game game-console">
+        <button type="button" class="btn btn-success create-game game-console">
         Start Game</button>
 
-
-        <button type="button" class="btn btn-default reset-game game-console">
+        <button type="button" class="btn btn-info reset-game game-console">
           Reset Game</button>
       </div>
   </div>

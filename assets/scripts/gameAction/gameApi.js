@@ -9,18 +9,17 @@ const gameUi = require('./gameUi');
   //     Authorization: 'Token token=' + app.user.token,
   //   },
   // });
-
-  const gameCreate = (data) => $.ajax({
+  const gameCreate = () => $.ajax({
       url: app.api + '/games',
       method: 'POST',
-      data,
+      data: '',
       headers: {
         Authorization: 'Token token=' + app.user.token,
       },
     });
 
 
-  const gamesShow = (data) => $.ajax({
+  const gamesShowAll = (data) => $.ajax({
     // return $.ajax({
       url: app.api + '/games/',
       method: 'GET',
@@ -31,13 +30,11 @@ const gameUi = require('./gameUi');
   });
 
   const gameShow = (data) => $.ajax({
-    // return $.ajax({
-      url: app.api + '/games/' + app.game.id,
+      url: app.api + '/games/' + data.game.id,
       method: 'GET',
       headers: {
         Authorization: 'Token token=' + app.user.token,
       },
-      data,
   });
 
   // success: function(data){
@@ -78,6 +75,6 @@ If a player gets 3 of their player types in a row, that player wins.
 module.exports = {
   //gamesIndex,
   gameCreate,
-  gamesShow,
+  gamesShowAll,
   gameShow,
 };

@@ -4,6 +4,39 @@ const gameApi = require('./gameApi');
 const gameUi = require('./gameUi');
 const game = require('./game');
 
+
+const onShowGame = function (event) {
+  let data = getFormFields(this);
+  // console.log(data);
+  event.preventDefault();
+  gameApi.gameShow(data)
+    .done(gameUi.gameSuccess)
+    .fail(gameUi.failure);
+};
+//   if (bookId.length === 0) {
+//     GameApi.index()
+//       .done(ui.onSuccess)
+//       .fail(ui.onError);
+//     } else {
+//     GameApi.show(bookId)
+//       .done(ui.onSuccess)
+//       .fail(ui.onError);
+//   }
+// };
+
+// $('.show-game').on('submit', findGame);
+// $('.search-game-button').click(function() {
+// $('#sign-in-modal').modal('hide');
+// });
+
+// $('.sign-in-button').click(function() {
+//   $('#sign-in-modal').modal('hide');
+//   });
+//
+// $('#sign-in').on('submit', onSignIn);
+
+
+
 // const onGetGames = function (event) {
 //   event.preventDefault();
 //   let gameId = $(event.target).find('[name="book[id]"]').val();
@@ -24,25 +57,24 @@ const onCreateGame = function (event) {
   gameApi.gameCreate(data)
     .done(gameUi.createSuccess)
     .fail(gameUi.failure);
-    app.game = data.game;
 };
 
-const onShowAllGames = function (event) {
-  event.preventDefault();
-  let data = gameUi.gameId;
+// const onShowAllGames = function (event) {
+//   event.preventDefault();
+//   let data = gameUi.gameId;
+//
+//   gameApi.gamesShow(data)
+//     .done(gameUi.showAllSuccess)
+//     .fail(gameUi.failure);
+// };
 
-  gameApi.gamesShow(data)
-    .done(gameUi.showAllSuccess)
-    .fail(gameUi.failure);
-};
-
-const onShowGame = function (event) {
-  let data = getFormFields(this);
-  event.preventDefault();
-  gameApi.gameShow(data)
-    .done(gameUi.showSuccess)
-    .fail(gameUi.failure);
-};
+// const onShowGame = function (event) {
+//   let data = getFormFields(this);
+//   event.preventDefault();
+//   gameApi.gameShow(data)
+//     .done(findGame)
+//     .fail(gameUi.failure);
+// };
 // const onShowGame = function (event) {
 //   event.preventDefault();
 //   let bookId = $('#book-id').val();
@@ -81,8 +113,12 @@ const addGameHandlers = () => {
   $('.create-game').on('click',game.startGame);
   $('.create-game').on('click',onCreateGame);
   $('.show-all-games').on('click',onShowAllGames);
-  $('.show-game').on('click',onShowGame);
-
+  // $('.show-game').on('click',onShowGame);
+  // $('.search-game-button').click(function() {
+  $('#show-game').on('submit', onShowGame);
+  $('.search-game-button').click(function() {
+  $('#show-game-modal').modal('hide');
+  });
 };
 
 
