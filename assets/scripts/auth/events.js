@@ -37,6 +37,7 @@ const onSignOut = function (event) {
 };
 
 const addHandlers = () => {
+  //this is the modal form
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);

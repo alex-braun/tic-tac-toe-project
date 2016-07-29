@@ -37,19 +37,68 @@ body {
 
 }
 
-.col-xs-4 {
-  border: 1px solid $border-color;
-  padding-bottom: 35%;
-}
-
-.col-md-4 {
-  max-width: 70%;
-}
-
-.form-control {
-  max-width: 25%;
-}
-
 .container {
+  width: 70%;
+  // padding-bottom: 30%;
+}
 
+.grid {
+  float: left;
+  height: 100%;
+  max-height: 100px;
+  max-width: 33%;
+  padding-bottom: 30%;
+  width: 33%;
+}
+
+.grid-one {
+  border-bottom: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+}
+
+.grid-two {
+  border-bottom: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+}
+
+.grid-three {
+  border-bottom: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+}
+
+.grid-four {
+  border-bottom: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+}
+
+.grid-five {
+  border: 10px solid $border-color;
+}
+
+.grid-six {
+  border-bottom: 10px solid $border-color;
+  border-left: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+}
+
+.grid-seven {
+  border-right: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+}
+
+.grid-eight {
+  border-left: 10px solid $border-color;
+  border-right: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+}
+
+.grid-nine {
+  border-left: 10px solid $border-color;
+  border-top: 10px solid $border-color;
+}
+
+.game-console {
+  margin: 5px;
 }

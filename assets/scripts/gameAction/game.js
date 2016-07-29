@@ -14,6 +14,7 @@ let over = false;
 
 //Resets the game variables and events after pressing the "Reset Game" button
 let resetGame = function() {
+  $('.create-game').css('visibility','visible');
   $('.grid').empty();
   $('.message-board').empty();
   over = false;
@@ -28,14 +29,18 @@ let resetGame = function() {
 //const startGame() {
 
 const playGame = function() {
+  $('.create-game').css('visibility','hidden');
+  $('.reset-game').hide();
   let player = 0;
   if (turnCount % 2 === 0) {
     player = player_x;
+    $(this).prepend('<img src="../images/letter-x_318-26692.png" height="100%" width="100%">').off();
   } else {
     player = player_o;
+    $(this).prepend('<img src="../images/1188456-circle_metro.gif" height="100%" width="100%">').off();
   }
-
-  $(this).append(player).off();
+// $('#test').empty().append('<img src="/static/on.png" height="64px" width="64px">')
+  // $(this).prepend('<img src="../images/letter-x_318-26692.png" height="125px" width="125px">').off();
 
   let gridLocation = $(this).data('value');
   let gridNumber = gameArray.indexOf(gridLocation);
@@ -81,6 +86,8 @@ const playGame = function() {
 
   if (over === true) {
       $('.grid').off();
+      $('.reset-game').show();
+
   }
   //++turnCount;
   console.log(gameUi.listOfUserGames);
@@ -95,11 +102,9 @@ let startGame = function() {
 
 $('.reset-game').on('click',resetGame);
 // $('.show-all-games').on('click', function() {
-//   for (let i = 0; i < gameUi.listOfUserGames.length; i++) {
-//     alert(gameUi.listOfUserGames[i]);
-//   }
-// });
-//};
+//     console.log(gameUi.showAll.user.games);
+//});
+
 module.exports = {
   startGame,
   //addGameHandlers,
