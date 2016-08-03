@@ -67,7 +67,7 @@ webpackJsonp([0],[
 	var onSignIn = function onSignIn(event) {
 	  var data = getFormFields(this);
 	  event.preventDefault();
-	  $('.player-id').text("User: " + data);
+	  // $('.player-id').text("Hello, User: " + data);
 	  api.signIn(data).done(ui.signInSuccess).fail(ui.failure);
 	};
 
