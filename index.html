@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta name="viewport" content="width=device-width" />
       <title>Example</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -8,12 +9,24 @@
     </head>
     <body class="container-fluid">
 
-<nav class="navbar">
+<nav class="navbar-right">
+  <div class="dropdown">
+  <button class="dropdown-toggle btn-custom" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#" data-toggle="modal" data-target="#sign-in-modal">Sign In</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#sign-out-modal">Sign Out</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
+  </ul>
+</div>
+</nav>
   <div class="container-fluid">
-      <form class="navbar-form navbar-right">
+      <!-- <form class="navbar-form navbar-right">
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-in-modal">
           Sign In</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-out-modal">
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-out-modal">
           Sign Out</button>
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-up-modal">
           Sign Up</button>
@@ -21,7 +34,7 @@
           Change Password</button>
       </form>
   </div>
-</nav>
+</nav> -->
 
 <!-- SIGN IN MODAL -->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -142,8 +155,8 @@
       <button type="button" class="btn btn-info show-all-games game-console">
         User Games</button>
 
-        <button type="button" class="btn btn-info show-game game-console" data-toggle="modal" data-target="#show-game-modal">
-        Show Game</button>
+        <!-- <button type="button" class="btn btn-info show-game game-console" data-toggle="modal" data-target="#show-game-modal">
+        Show Games</button> -->
 
       <div class="buttons-row-two">
         <button type="button" class="btn btn-success create-game game-console">
@@ -157,20 +170,21 @@
   <div class="message-board"></div>
         <div class="container">
           <div class="row">
-            <div class="grid-one grid" data-value="R1C1"></div>
-            <div class="grid-two grid" data-value="R1C2"></div>
-            <div class="grid-three grid" data-value="R1C3"></div>
+            <div class="grid-one grid" data-value ="" data-spot="R1C1"></div>
+            <div class="grid-two grid" data-value ="" data-spot="R1C2"></div>
+            <div class="grid-three grid" data-value ="" data-spot="R1C3"></div>
           </div>
           <div class="row">
-            <div class="grid-four grid" data-value="R2C1"></div>
-            <div class="grid-five grid" data-value="R2C2"></div>
-            <div class="grid-six grid" data-value="R2C3"></div>
+            <div class="grid-four grid" data-value ="" data-spot="R2C1"></div>
+            <div class="grid-five grid" data-value ="" data-spot="R2C2"></div>
+            <div class="grid-six grid" data-value ="" data-spot="R2C3"></div>
           </div>
           <div class="row">
-            <div class="grid-seven grid" data-value="R3C1"></div>
-            <div class="grid-eight grid" data-value="R3C2"></div>
-            <div class="grid-nine grid" data-value="R3C3"></div>
+            <div class="grid-seven grid" data-value ="" data-spot="R3C1"></div>
+            <div class="grid-eight grid" data-value ="" data-spot="R3C2"></div>
+            <div class="grid-nine grid" data-value ="" data-spot="R3C3"></div>
           </div>
         </div>
+      </div>
     </body>
 </html>

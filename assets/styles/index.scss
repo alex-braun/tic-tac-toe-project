@@ -7,38 +7,59 @@ body {
   background-image: url('../../images/wood-texture0020.jpg');
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 35%;
+@media screen and (max-width: 900px) {
+
+  .container-fluid {
+    margin: 5px;
+    padding: 0;
+  }
+
+  .title h1 {
+    font-size: 30px;
+  }
+
+  .game-buttons {
+    margin: 2px;
   }
 }
 
-@media (max-width: 1199px) {
-  .container {
-    max-width: 50%;
-  }
+.btn-custom {
+  background-color: transparent;
+  border: 0;
+  margin: 20px;
+  width: 70px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    max-width: 75%;
-  }
+.glyphicon {
+  font-size: 70px;
 }
 
 .title {
-  // border: 1px solid $border-color;
   width: 50%;
 }
 
 .message-block {
   float: right;
-  height: 100%;
-  max-height:100px;
-  max-width: 200px;
-  width: 40%;
-  // border: 1px solid $border-color;
   font-family: Big Caslon, sans-serif;
+  height: 100%;
+  max-height: 100px;
+  max-width: 200px;
   text-align: right;
+  width: 40%;
+}
+
+h2 {
+  font-family: DejaVu;
+  font-size: 19.95vw;
+  line-height: 18vw;
+  margin: 0;
+}
+
+h3 {
+  font-family: DejaVu;
+  font-size: 19.95vw;
+  line-height: 18vw;
+  margin: 0;
 }
 
 .game-buttons {
@@ -60,72 +81,79 @@ body {
 }
 
 .message-board {
-  //border: 1px solid $border-color;
-  font-size: 35px;
-  height: 40px;
+  font-size: 50px;
+  height: 50px;
   text-align: center;
+  margin: 20px;
 }
 
 .container {
-  width: 70%;
-  // padding-bottom: 30%;
+  height: 60vw;
+  width: 60vw;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .grid {
+  width: 33.3333333%;
+  height: 19.95vw;
+  line-height: 18vw;
+  margin: 0;
   float: left;
-  height: 100%;
-  max-height: 100px;
-  max-width: 33%;
-  padding-bottom: 30%;
-  width: 33%;
 }
 
 .grid-one {
-  border-bottom: 10px solid $border-color;
-  border-right: 10px solid $border-color;
+  border-bottom: 1vw solid $border-color;
+  border-right: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .grid-two {
-  border-bottom: 10px solid $border-color;
-  border-left: 10px solid $border-color;
-  border-right: 10px solid $border-color;
+  border-bottom: 1vw solid $border-color;
+  border-left: 1vw solid $border-color;
+  border-right: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .grid-three {
-  border-bottom: 10px solid $border-color;
-  border-left: 10px solid $border-color;
+  border-bottom: 1vw solid $border-color;
+  border-left: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .grid-four {
-  border-bottom: 10px solid $border-color;
-  border-right: 10px solid $border-color;
-  border-top: 10px solid $border-color;
+  border-bottom: 1vw solid $border-color;
+  border-right: 1vw solid $border-color;
+  border-top: 1vw solid $border-color;
 }
 
 .grid-five {
-  border: 10px solid $border-color;
+  border: 1vw solid $border-color;
 }
 
 .grid-six {
-  border-bottom: 10px solid $border-color;
-  border-left: 10px solid $border-color;
-  border-top: 10px solid $border-color;
+  border-bottom: 1vw solid $border-color;
+  border-left: 1vw solid $border-color;
+  border-top: 1vw solid $border-color;
 }
 
 .grid-seven {
-  border-right: 10px solid $border-color;
-  border-top: 10px solid $border-color;
+  border-right: 1vw solid $border-color;
+  border-top: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .grid-eight {
-  border-left: 10px solid $border-color;
-  border-right: 10px solid $border-color;
-  border-top: 10px solid $border-color;
+  border-left: 1vw solid $border-color;
+  border-right: 1vw solid $border-color;
+  border-top: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .grid-nine {
-  border-left: 10px solid $border-color;
-  border-top: 10px solid $border-color;
+  border-left: 1vw solid $border-color;
+  border-top: 1vw solid $border-color;
+  padding-top: 1vw;
 }
 
 .game-console {
