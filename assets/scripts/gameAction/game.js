@@ -1,58 +1,46 @@
 'use strict';
-const gameUi = require('./gameUi');
+//const gameUi = require('./gameUi');
+const gameApi = require('./gameApi');
+
+
 //arrays and variables
 const gameArray = ['R1C1','R1C2','R1C3','R2C1','R2C2','R2C3','R3C1','R3C2','R3C3'];
-const player_x = 'x';
-const player_o = 'o';
-//let turnCount = 0;
 let turnCount = 0;
-let cells = [];
+let over = false;
+let gridLocation;
+let player = 'x';
 let xPicks = [];
 let oPicks = [];
-let over = false;
+let gridNumber;
 
 
-//Resets the game variables and events after pressing the "Reset Game" button
-let resetGame = function() {
-  $('.create-game').css('visibility','visible');
-  $('.grid').empty();
-  $('.message-board').empty();
-  over = false;
-  cells = [];
-  turnCount = 0;
-  xPicks = [];
-  oPicks = [];
-};
-
-
-//The game logic is contained within this function
-//const startGame() {
-
-const playGame = function() {
-  $('.create-game').css('visibility','hidden');
-  $('.reset-game').hide();
-  let player = 0;
+//checks for playerTurn and adds the correct card on the grid spot.
+const playerTurn = function() {
   if (turnCount % 2 === 0) {
-    player = player_x;
-    $(this).prepend('<img src="http://i.imgur.com/iRgTEZU.jpg" title="source: imgur.com" height="100%" width="100%">').off();
+    player = 'x';
+    $(this).prepend('<h2>&times</h2>').off();
   } else {
-    player = player_o;
-    $(this).prepend('<img src="http://i.imgur.com/6L4IMCz.gif" title="source: imgur.com" height="100%" width="100%">').off();
-  }
-// $('#test').empty().append('<img src="/static/on.png" height="64px" width="64px">')
-  // $(this).prepend('<img src="../images/letter-x_318-26692.png" height="125px" width="125px">').off();
-
-  let gridLocation = $(this).data('value');
-  let gridNumber = gameArray.indexOf(gridLocation);
-  cells[gridNumber] = player;
-
-  if (player === player_x) {
-    xPicks.push(gridNumber);
-  } else if (player === player_o) {
-    oPicks.push(gridNumber);
+    player = 'o';
+    $(this).prepend('<h3>&cir;</h3>').off();
   }
   turnCount++;
+  return player;
+};
 
+//finds the grid location
+const findGridLocation = function () {
+  gridLocation = $(this).data('spot');
+  gridNumber = gameArray.indexOf(gridLocation);
+  $(this).data().value = player;
+};
+
+//checks if there is a winner or a tie after every turn
+const checkStatus = function () {
+  if (player === 'x') {
+    xPicks.push(gridNumber);
+  } else if (player === 'o') {
+    oPicks.push(gridNumber);
+  }
   if (xPicks.includes(0)&& xPicks.includes(1)&& xPicks.includes(2)||
       xPicks.includes(3)&& xPicks.includes(4)&& xPicks.includes(5)||
       xPicks.includes(6)&& xPicks.includes(7)&& xPicks.includes(8)||
@@ -87,26 +75,41 @@ const playGame = function() {
   if (over === true) {
       $('.grid').off();
       $('.reset-game').show();
-
   }
-  //++turnCount;
-  console.log(gameUi.listOfUserGames);
-  console.log(turnCount);
-  return cells;
+
+  //THIS IS THE UPDATE POINT FOR THE PATCH REQUEST
+  gameApi.gameUpdate(gridNumber, player, over);
+
+  return over;
   };
 
-//});
-let startGame = function() {
-  $('.grid').on('click',playGame);
-};
+//this function resets the game whenever the 'reset game' button is pressed
+  let resetGame = function() {
+    over = true;
+    $('.grid').empty();
+    $('.message-board').empty();
+    $('.grid').on('click', playerTurn);
+    $('.grid').on('click', findGridLocation);
+    $('.grid').on('click', checkStatus);
+    $('.grid').removeData('value');
+    over = false;
+    turnCount = 0;
+    xPicks = [];
+    oPicks = [];
+    player = 'x';
+    return playerTurn;
+  };
 
+$('.grid').on('click', playerTurn);
+$('.grid').on('click', findGridLocation);
+$('.grid').on('click', checkStatus);
 $('.reset-game').on('click',resetGame);
-// $('.show-all-games').on('click', function() {
-//     console.log(gameUi.showAll.user.games);
-//});
+
 
 module.exports = {
-  startGame,
-  //addGameHandlers,
-  //resetGame,
+
+  playerTurn,
+  findGridLocation,
+  checkStatus,
+  resetGame,
 };

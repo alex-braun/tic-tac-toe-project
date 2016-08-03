@@ -7,16 +7,19 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  $('.player-id').text("Hello, user: " + data.user.id);
   console.log(app);
+  $('.player-id').text("Hello, user: " + data.user.id);
 };
 
 const signOutSuccess = () => {
   delete app.user;
   console.log(app);
+  $('.player-id').empty();
+  $('.completed-games-count').empty();
 };
 const failure = (error) => {
   console.error(error);
+  $('.player-id').text('Error!  Please check your password!');
 
 };
 
