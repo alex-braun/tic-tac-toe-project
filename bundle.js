@@ -232,7 +232,8 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'http://tic-tac-toe.wdibos.com'
+	  // api: 'http://tic-tac-toe.wdibos.com',
+	  api: 'https://aqueous-atoll-85096.herokuapp.com'
 	};
 
 	module.exports = app;
