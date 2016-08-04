@@ -67,14 +67,14 @@ webpackJsonp([0],[
 	var onSignIn = function onSignIn(event) {
 	  var data = getFormFields(this);
 	  event.preventDefault();
-	  // $('.player-id').text("Hello, User: " + data);
+	  $('.player-id').text("Hello, User: " + data);
 	  api.signIn(data).done(ui.signInSuccess).fail(ui.signInFailure);
 	};
 
 	var onChangePassword = function onChangePassword(event) {
 	  var data = getFormFields(this);
 	  event.preventDefault();
-	  api.changePassword(data).done(ui.success).fail(ui.failure);
+	  api.changePassword(data).done(ui.changePassSuccess).fail(ui.failure);
 	};
 
 	var onSignOut = function onSignOut(event) {
@@ -262,13 +262,18 @@ webpackJsonp([0],[
 	  $('.player-id').empty();
 	  $('.completed-games-count').empty();
 	};
+
+	var changePassSuccess = function changePassSuccess(data) {
+	  console.log(data);
+	  // $('.player-id').text("Password successfully changed");
+	};
+
 	var failure = function failure(error) {
-	  console.error(error);
-	  // $('.player-id').text('Error!  Please check your password!');
+	  console.log(error);
 	};
 
 	var signInFailure = function signInFailure(error) {
-	  console.error(error);
+	  console.log(error);
 	  $('.player-id').text('Error!  Please check your password!');
 	};
 
@@ -278,6 +283,7 @@ webpackJsonp([0],[
 	  signInSuccess: signInSuccess,
 	  signOutSuccess: signOutSuccess,
 	  signInFailure: signInFailure,
+	  changePassSuccess: changePassSuccess,
 	  app: app
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -373,7 +379,7 @@ webpackJsonp([0],[
 
 	var gameUpdate = function gameUpdate(gridLocation, player, over) {
 	  return $.ajax({
-	    url: app.api + '/games/' + app.user.id,
+	    url: app.api + '/games/' + app.game.id,
 	    method: 'PATCH',
 	    headers: {
 	      Authorization: 'Token token=' + app.user.token
@@ -409,12 +415,21 @@ webpackJsonp([0],[
 
 	var createdGame = void 0;
 
+	// const createSuccess = function (data) {
+	//   createdGame = data.game.id;
+	//   if (data.game) {
+	//     console.log(data.game);
+	//   }
+	//   app.user.id = data.game.id;
+	//   return createdGame;
+	// };
+
 	var createSuccess = function createSuccess(data) {
-	  createdGame = data.game.id;
+	  createdGame = data.game;
 	  if (data.game) {
 	    console.log(data.game);
 	  }
-	  app.user.id = data.game.id;
+	  app.game = data.game;
 	  return createdGame;
 	};
 
@@ -507,7 +522,8 @@ webpackJsonp([0],[
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {
+	'use strict';
 	//const gameUi = require('./gameUi');
 
 	var gameApi = __webpack_require__(9);
