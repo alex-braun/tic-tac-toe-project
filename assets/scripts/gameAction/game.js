@@ -1,7 +1,7 @@
 'use strict';
 //const gameUi = require('./gameUi');
 const gameApi = require('./gameApi');
-
+const gameEvents = require('./gameEvents');
 
 //arrays and variables
 const gameArray = ['R1C1','R1C2','R1C3','R2C1','R2C2','R2C3','R3C1','R3C2','R3C3'];
@@ -92,6 +92,7 @@ const checkStatus = function () {
     $('.grid').on('click', findGridLocation);
     $('.grid').on('click', checkStatus);
     $('.grid').removeData('value');
+    $('.show-all-games').one('click',gameEvents.onShowAllGames);
     over = false;
     turnCount = 0;
     xPicks = [];
