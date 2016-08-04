@@ -35,7 +35,7 @@ const onShowAllGames = function (event) {
 
 const addGameHandlers = () => {
   $('.create-game').on('click', onCreateGame);
-  $('.show-all-games').on('click',onShowAllGames);
+  $('.show-all-games').on('click', onShowAllGames);
   $('#show-game').on('submit', onShowGame);
   $('.search-game-button').click(function() {
   $('#show-game-modal').modal('hide');

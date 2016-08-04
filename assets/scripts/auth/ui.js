@@ -19,14 +19,22 @@ const signOutSuccess = () => {
 };
 const failure = (error) => {
   console.error(error);
+  // $('.player-id').text('Error!  Please check your password!');
+
+};
+
+const signInFailure = (error) => {
+  console.error(error);
   $('.player-id').text('Error!  Please check your password!');
 
 };
+
 
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
+  signInFailure,
   app,
 };
