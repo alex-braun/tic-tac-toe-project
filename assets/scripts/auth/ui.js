@@ -17,14 +17,18 @@ const signOutSuccess = () => {
   $('.player-id').empty();
   $('.completed-games-count').empty();
 };
-const failure = (error) => {
-  console.error(error);
-  // $('.player-id').text('Error!  Please check your password!');
 
+const changePassSuccess = (data) => {
+  console.log(data);
+  // $('.player-id').text("Password successfully changed");
+};
+
+const failure = (error) => {
+  console.log(error);
 };
 
 const signInFailure = (error) => {
-  console.error(error);
+  console.log(error);
   $('.player-id').text('Error!  Please check your password!');
 
 };
@@ -36,5 +40,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   signInFailure,
+  changePassSuccess,
   app,
 };

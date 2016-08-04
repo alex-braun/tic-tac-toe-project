@@ -34,7 +34,7 @@ const app = require('../app');
 
   const gameUpdate = function (gridLocation, player, over) {
       return $.ajax({
-      url: app.api + '/games/' + app.user.id,
+      url: app.api + '/games/' + app.game.id,
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + app.user.token,

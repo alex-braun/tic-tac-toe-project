@@ -5,15 +5,23 @@ const game = require('./game');
 let createdGame;
 
 
+// const createSuccess = function (data) {
+//   createdGame = data.game.id;
+//   if (data.game) {
+//     console.log(data.game);
+//   }
+//   app.user.id = data.game.id;
+//   return createdGame;
+// };
+
 const createSuccess = function (data) {
-  createdGame = data.game.id;
+  createdGame = data.game;
   if (data.game) {
     console.log(data.game);
   }
-  app.user.id = data.game.id;
+  app.game = data.game;
   return createdGame;
 };
-
 
 const showAllSuccess = function (data) {
   // let oWon = 0;
