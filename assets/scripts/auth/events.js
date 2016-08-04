@@ -19,7 +19,7 @@ const onSignIn = function (event) {
   // $('.player-id').text("Hello, User: " + data);
   api.signIn(data)
   .done(ui.signInSuccess)
-  .fail(ui.failure);
+  .fail(ui.signInFailure);
 };
 
 const onChangePassword = function (event) {
