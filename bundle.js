@@ -309,14 +309,16 @@ webpackJsonp([0],[
 
 	var onCreateGame = function onCreateGame(event) {
 	  var data = getFormFields(this);
+	  // console.log(data);
 	  event.preventDefault();
 	  gameApi.gameCreate(data).done(gameUi.createSuccess).fail(gameUi.failure);
 	};
 
 	var onShowAllGames = function onShowAllGames(event) {
 	  event.preventDefault();
+
 	  var data = gameUi.gameId;
-	  console.log(data);
+
 	  gameApi.gamesShowAll(data).done(gameUi.showAllSuccess).fail(gameUi.failure);
 	};
 
@@ -378,6 +380,7 @@ webpackJsonp([0],[
 	};
 
 	var gameUpdate = function gameUpdate(gridLocation, player, over) {
+	  console.log(app.game.id);
 	  return $.ajax({
 	    url: app.api + '/games/' + app.game.id,
 	    method: 'PATCH',
