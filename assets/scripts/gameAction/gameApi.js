@@ -33,6 +33,7 @@ const app = require('../app');
 
 
   const gameUpdate = function (gridLocation, player, over) {
+    console.log(app.game.id);
       return $.ajax({
       url: app.api + '/games/' + app.game.id,
       method: 'PATCH',
