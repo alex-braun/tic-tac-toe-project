@@ -1,4 +1,5 @@
 #My Tic Tac Toe Game
+Check it out at: https://alex-braun.github.io/tic-tac-toe-project
 
 Please see TicTacToeMain.png and TickTackToePhone.png for project wireframes.
 

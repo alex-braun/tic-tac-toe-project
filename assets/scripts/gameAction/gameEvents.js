@@ -16,6 +16,7 @@ const onShowGame = function (event) {
 
 const onCreateGame = function (event) {
   let data = getFormFields(this);
+  // console.log(data);
   event.preventDefault();
   gameApi.gameCreate(data)
     .done(gameUi.createSuccess)
@@ -25,8 +26,9 @@ const onCreateGame = function (event) {
 
 const onShowAllGames = function (event) {
   event.preventDefault();
+
   let data = gameUi.gameId;
-  console.log(data);
+  
   gameApi.gamesShowAll(data)
     .done(gameUi.showAllSuccess)
     .fail(gameUi.failure);
